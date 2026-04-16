@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple: #27003D;
+  --offwhite: #FFF8FC;
+  --coral: #EE3A64;
+}
+
+body {
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  background: var(--purple);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px;
+}
+
+header { text-align: center; margin-bottom: 40px; }
+header h1 { font-size: 2rem; font-weight: 600; letter-spacing: -0.01em; }
+header p { margin-top: 8px; opacity: 0.65; font-size: 1rem; }
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 36px;
+  width: 100%;
+  max-width: 520px;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+input[type="url"] {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input[type="url"]::placeholder { opacity: 0.4; }
+input[type="url"]:focus { border-color: var(--coral); }
+
+.theme-toggle { margin-top: 24px; }
+
+.toggle-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.theme-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.theme-btn.light-btn       { background: var(--offwhite); color: var(--purple); }
+.theme-btn.dark-btn        { background: var(--purple); color: white; border-color: rgba(255,255,255,0.3); }
+.theme-btn.transparent-btn { background: rgba(255,255,255,0.07); color: white; border-color: rgba(255,255,255,0.2); }
+
+.theme-btn.active {
+  border-color: var(--coral);
+  box-shadow: 0 0 0 2px var(--coral);
+}
+
+.swatch {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,0,0,0.2);
+  flex-shrink: 0;
+}
+.swatch-white  { background: white; }
+.swatch-purple { background: var(--purple); border-color: rgba(255,255,255,0.4); }
+.swatch-transparent {
+  background-image: linear-gradient(45deg,#aaa 25%,transparent 25%),
+                    linear-gradient(-45deg,#aaa 25%,transparent 25%),
+                    linear-gradient(45deg,transparent 75%,#aaa 75%),
+                    linear-gradient(-45deg,transparent 75%,#aaa 75%);
+  background-size: 6px 6px;
+  background-position: 0 0,0 3px,3px -3px,-3px 0;
+  background-color: white;
+  border-color: rgba(255,255,255,0.3);
+}
+
+.generate-btn {
+  margin-top: 28px;
+  width: 100%;
+  padding: 14px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.generate-btn:hover { opacity: 0.88; }
+
+.result {
+  margin-top: 36px;
+  text-align: center;
+  display: none;
+}
+
+#qr-output {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+#qr-output.transparent-qr {
+  background-image: linear-gradient(45deg,#555 25%,transparent 25%),
+                    linear-gradient(-45deg,#555 25%,transparent 25%),
+                    linear-gradient(45deg,transparent 75%,#555 75%),
+                    linear-gradient(-45deg,transparent 75%,#555 75%);
+  background-size: 16px 16px;
+  background-position: 0 0,0 8px,8px -8px,-8px 0;
+  background-color: #888;
+}
+
+.download-btn {
+  margin-top: 16px;
+  padding: 11px 28px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: white;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.download-btn:hover { background: rgba(255,255,255,0.18); }

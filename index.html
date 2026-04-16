@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kantega QR-generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>QR-generator</h1>
+    <p>Lag Kantega-merkede QR-koder</p>
+  </header>
+
+  <div class="card">
+    <label for="url">URL</label>
+    <input type="url" id="url" placeholder="https://kantega.no" autofocus />
+
+    <div class="theme-toggle">
+      <label>Bakgrunn</label>
+      <div class="toggle-row">
+        <button class="theme-btn light-btn active" onclick="setTheme('light')">
+          <span class="swatch swatch-white"></span> Hvit
+        </button>
+        <button class="theme-btn dark-btn" onclick="setTheme('dark')">
+          <span class="swatch swatch-purple"></span> Mørk lilla
+        </button>
+        <button class="theme-btn transparent-btn" onclick="setTheme('transparent')">
+          <span class="swatch swatch-transparent"></span> Gjennomsiktig
+        </button>
+      </div>
+    </div>
+
+    <button class="generate-btn" id="gen-btn" onclick="generate()">Generer QR-kode</button>
+    <p id="error-msg" style="color:#EE3A64;margin-top:12px;font-size:0.9rem;display:none;"></p>
+
+    <div class="result" id="result">
+      <canvas id="qr-output"></canvas>
+      <br/>
+      <button class="download-btn" onclick="download()">Last ned PNG</button>
+    </div>
+  </div>
+
+  <script src="js/qrcode.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
