@@ -18,6 +18,8 @@ Skriv inn en URL, velg bakgrunn og klikk **Generer QR-kode**. Last ned resultate
 
 ## GitHub Pages
 
+**Live:** https://kantega.github.io/qr-tega/
+
 Gå til repo-innstillinger → Pages → kilde: `main`, rot `/`. Siden er én selvinneholdt HTML-fil uten eksterne avhengigheter.
 
 ## Innhold
